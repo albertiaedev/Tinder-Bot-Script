@@ -13,3 +13,5 @@ web = 'https://www.tinder.com/'
 opt = Options()
 opt.add_experimental_option('debuggerAddress', 'localhost:#')
 driver = webdriver.Chrome(service=service, options=opt)
+
+driver.get(web)
