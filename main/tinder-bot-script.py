@@ -11,7 +11,7 @@ path = # 'insert here the path of chromedriver in your computer'
 service = Service(executable_path=path)
 web = 'https://www.tinder.com/'
 
-opt = Options()
+opt = Options()cd main
 opt.add_experimental_option('debuggerAddress', 'localhost:#')
 driver = webdriver.Chrome(service=service, options=opt)
 
@@ -19,25 +19,27 @@ total_likes = 30
 
 driver.get(web)
 
-time.sleep(3)
+time.sleep(10)
 for i in range(total_likes):
     try:
         # automate 'swipe right'
-        time.sleep(3)
         like = driver.find_element(by='xpath', value='//button//span[text()="Like"]')
         driver.execute_script("argument[0].click();", like)
-        time.sleep(2)
+        time.sleep(3)
 
         # automate a match message
         match = driver.find_element(by='xpath', value='//textarea[@placeholder="Say something nice!"]')
         #you may need to change the placeholder to your local language
         hook = "They say love is important, but I think YOU are more important" #yes, it's cheesy. Don't blame me lol
         match.send_keys(hook)
+        time.sleep(2)
 
+        # automate sending message to match
         send = driver.find_element(by='xpath', value='//button/span[text()="Send"]')
         send.click()
         time.sleep(1)
 
+        # automate closing match window and continue swiping
         close = driver.find_element(by='xpath', value='//button[@title="Back to Tinder"]')
         close.click()
     except:
