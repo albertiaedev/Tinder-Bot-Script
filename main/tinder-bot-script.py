@@ -27,3 +27,10 @@ match = driver.find_element(by='xpath', value='//textarea[@placeholder="Say some
 #you may need to change the placeholder to your local language
 hook = "They say love is important, but I think YOU are more important" #yes, it's cheesy. Don't blame me lol
 match.send_keys(hook)
+
+send = driver.find_element(by='xpath', value='//button//span[text()="Send"]')
+send.click()
+time.sleep(1)
+
+close = driver.find_element(by='xpath', value='//button//span[@title="Back to Tinder"]')
+close.click()
