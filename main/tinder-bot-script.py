@@ -11,7 +11,7 @@ path = # 'insert here the path of chromedriver in your computer'
 service = Service(executable_path=path)
 web = 'https://www.tinder.com/'
 
-opt = Options()cd main
+opt = Options()
 opt.add_experimental_option('debuggerAddress', 'localhost:#')
 driver = webdriver.Chrome(service=service, options=opt)
 
