@@ -38,8 +38,10 @@ for i in range(total_likes):
 
         close = driver.find_element(by='xpath', value='//button[@title="Back to Tinder"]')
         close.click()
-
-        # get rid of tinder ads
-        adblock = driver.find_element(by='xpath', value='//button/span[text()="Maybe later"] | //button/span[text()="Not interested"] | //button/span[text()="No thanks"]')
-        adblock.click()
     except:
+        try:
+            # get rid of tinder ads
+            adblock = driver.find_element(by='xpath', value='//button/span[text()="Maybe later"] | //button/span[text()="Not interested"] | //button/span[text()="No thanks"]')
+            adblock.click()
+        except:
+            pass
