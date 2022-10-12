@@ -46,4 +46,4 @@ for i in range(total_likes):
             adblock = driver.find_element(by='xpath', value='//button/span[text()="Maybe later"] | //button/span[text()="Not interested"] | //button/span[text()="No thanks"]')
             adblock.click()
         except:
-            pass
+            print("There's been a unexpected problem when executing normal swiping.")
