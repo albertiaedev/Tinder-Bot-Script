@@ -19,9 +19,11 @@ total_likes = 30
 
 driver.get(web)
 
+time.sleep(3)
 for i in range(total_likes):
     try:
         # automate 'swipe right'
+        time.sleep(3)
         like = driver.find_element(by='xpath', value='//button//span[text()="Like"]')
         driver.execute_script("argument[0].click();", like)
         time.sleep(2)
