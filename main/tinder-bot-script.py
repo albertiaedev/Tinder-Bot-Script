@@ -21,3 +21,9 @@ driver.get(web)
 like = driver.find_element(by='xpath', value='//button//span[text()="Like"]')
 driver.execute_script("argument[0].click();", like)
 time.sleep(2)
+
+# automate a match message
+match = driver.find_element(by='xpath', value='//textarea[@placeholder="Say something nice!"]')
+#you may need to change the placeholder to your local language
+hook = "They say love is important, but I think YOU are more important" #yes, it's cheesy. Don't blame me lol
+match.send_keys(hook)
